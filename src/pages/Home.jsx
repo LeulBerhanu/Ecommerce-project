@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { data } from "../../data";
-import Card from "../components/utils/Card";
 import { v4 as uuidv4 } from "uuid";
+import Card from "../components/utils/Card";
+import Cart from "../components/utils/Cart";
 
 export default function Home() {
   const [filteredProducts, setFilteredProducts] = useState(data);
   const [selectedFilters, setSelectedFilter] = useState([]);
   const [cart, setCart] = useState([]);
   const [show, setShow] = useState(true);
-  const [hoveredIndex, setHoveredIndex] = useState(-1);
 
   const totalQuantity = cart.reduce((acc, item) => (acc += item.quantity), 0);
   const totalPrice = parseFloat(
@@ -119,14 +119,6 @@ export default function Home() {
         ];
       });
     }
-  }
-
-  function handleMouseOver(index) {
-    setHoveredIndex(index);
-  }
-
-  function handleMouseOut() {
-    setHoveredIndex(-1);
   }
 
   return (
