@@ -12,7 +12,7 @@ export const data = [
     price: 10.9,
     wholesaleQty: 9,
     wholesalePrice: 1.21,
-    size: ["xl", "xs", "m"],
+    size: ["xl", "xs", "m", "s", "l", "xxl"],
     freeShipping: true,
     addedToCart: false,
   },
