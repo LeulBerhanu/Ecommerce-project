@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { data } from "../../data";
-import Card from "../components/utils/Card";
+import { data } from "./data";
+import Card from "./src/components/utils/Card";
 
 export default function Home() {
   const [filteredProducts, setFilteredProducts] = useState(data);
@@ -192,7 +192,33 @@ export default function Home() {
         <div className="cards">
           {filteredProducts.map((item, index) => {
             return (
-              <Card addToCart={() => addToCart(item)} {...item} key={index} />
+              <div className="card" key={`card-${index}`}>
+                <div
+                  className="img__section"
+                  onMouseOver={() => handleMouseOver(index)}
+                  onMouseOut={handleMouseOut}
+                >
+                  <img
+                    src={index === hoveredIndex ? item.image[1] : item.image[0]}
+                    alt={item.name}
+                  />
+                </div>
+                <div className="card__body">
+                  <div className="card__name">{item.name}</div>
+                  <hr />
+                  <div className="card__price">
+                    $ <span className="bold">{item.price}</span>
+                  </div>
+                  <div className="card__wholesale">
+                    or {item.wholesaleQty} x
+                    <span className="bold"> $ {item.wholesalePrice}</span>
+                  </div>
+                  <p>Available sizes: {item.size.map((size) => size + " ")}</p>
+                  <button className="btn__card" onClick={() => addToCart(item)}>
+                    Add to cart
+                  </button>
+                </div>
+              </div>
             );
           })}
         </div>

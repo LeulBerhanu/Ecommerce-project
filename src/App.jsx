@@ -7,6 +7,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
+        {/* <Route index element={<Card />} /> */}
         <Route index element={<Home />} />
         <Route path="cart" element={<h1>Cart</h1>} />
       </Route>
