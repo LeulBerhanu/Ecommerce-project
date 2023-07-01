@@ -36,8 +36,8 @@ export default function Home() {
 
   function filterProducts() {
     if (selectedFilters.length > 0) {
-      const tempItems = selectedFilters.map((size) => {
-        const temp = data.filter((item) => item.size.includes(size));
+      const tempItems = selectedFilters.map((sizeFromFilters) => {
+        const temp = data.filter((item) => item.size.includes(sizeFromFilters));
         return temp;
       });
       const duplicatesRemoved = tempItems
@@ -197,7 +197,7 @@ export default function Home() {
                 addToCart={() => addToCart(item)}
                 {...item}
                 index={index}
-                key={uuidv4}
+                key={uuidv4()}
               />
             );
           })}
@@ -209,7 +209,7 @@ export default function Home() {
           <button
             key={`filter-${index}`}
             className={`${selectedFilters?.includes(size) ? "selected" : ""}`}
-            onClick={() => handleFilterButtonClick(size, index)}
+            onClick={() => handleFilterButtonClick(size)}
           >
             {size}
           </button>
