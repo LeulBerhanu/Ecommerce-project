@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { data } from "../../data";
 import Card from "../components/utils/Card";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Home() {
   const [filteredProducts, setFilteredProducts] = useState(data);
@@ -192,7 +193,12 @@ export default function Home() {
         <div className="cards">
           {filteredProducts.map((item, index) => {
             return (
-              <Card addToCart={() => addToCart(item)} {...item} key={index} />
+              <Card
+                addToCart={() => addToCart(item)}
+                {...item}
+                index={index}
+                key={uuidv4}
+              />
             );
           })}
         </div>
