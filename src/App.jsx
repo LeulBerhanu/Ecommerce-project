@@ -1,12 +1,12 @@
 import { createContext, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import "./sass/styles.scss";
-import Home from "./pages/Home.jsx";
 import Layout from "./components/Layout.jsx";
+import Home from "./pages/Home.jsx";
 import LoginPage from "./pages/LoginPage";
-// import Cart from "./components/utils/Cart";
 import CartPage from "./pages/CartPage";
 import ProtectedRoutes from "./pages/ProtectedRoutes";
+import NotFound from "./pages/NotFound";
 
 export const CartContext = createContext();
 
@@ -24,6 +24,7 @@ function App() {
           </Route>
           <Route path="login" element={<LoginPage />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </CartContext.Provider>
   );

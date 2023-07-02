@@ -1,15 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { data } from "../../data";
-import { v4 as uuidv4 } from "uuid";
-import Card from "../components/utils/Card";
 import Cart from "../components/utils/Cart";
-import { CartContext } from "../App";
-
+import Cards from "../components/utils/Cards";
 import "../components/componentsStyles.scss";
 
 export default function Home() {
-  const [cart, setCart] = useContext(CartContext);
-
   const [filteredProducts, setFilteredProducts] = useState(data);
   const [selectedFilters, setSelectedFilter] = useState([]);
   const [show, setShow] = useState(true);
@@ -50,38 +45,6 @@ export default function Home() {
     setShow(!show);
   }
 
-  function addToCart(cardsItem) {
-    const itemIndex = cart.findIndex(
-      (cartItem) => cartItem.id === cardsItem.id
-    );
-
-    if (itemIndex !== -1) {
-      setCart((prevCart) => {
-        return prevCart.map((item, i) => {
-          if (i === itemIndex) {
-            return {
-              ...item,
-              quantity: item.quantity + 1,
-            };
-          } else {
-            return item;
-          }
-        });
-      });
-    } else {
-      setCart((prevCart) => {
-        return [
-          ...prevCart,
-          {
-            ...cardsItem,
-            quantity: 1,
-            addedToCart: true,
-          },
-        ];
-      });
-    }
-  }
-
   return (
     <>
       <div className="layout">
@@ -89,19 +52,7 @@ export default function Home() {
           <Cart />
         </div>
         <main>
-          <div className="cards">
-            {filteredProducts.map((item, index) => {
-              return (
-                <Card
-                  className="cards__item"
-                  addToCart={() => addToCart(item)}
-                  {...item}
-                  index={index}
-                  key={item.id}
-                />
-              );
-            })}
-          </div>
+          <Cards filteredProducts={filteredProducts} />
         </main>
         <div>
           <div className="size__filter">
