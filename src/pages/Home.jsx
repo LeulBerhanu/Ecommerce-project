@@ -12,7 +12,6 @@ export default function Home() {
 
   const [filteredProducts, setFilteredProducts] = useState(data);
   const [selectedFilters, setSelectedFilter] = useState([]);
-  // const [cart, setCart] = useState([]);
   const [show, setShow] = useState(true);
 
   const filters = ["xs", "s", "m", "l", "xl", "xxl"];
@@ -85,8 +84,6 @@ export default function Home() {
 
   return (
     <>
-      {/* <aside>
-      </aside> */}
       <div className="layout">
         <div className="side-bar">
           <Cart />
