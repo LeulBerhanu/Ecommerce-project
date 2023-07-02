@@ -6,6 +6,7 @@
   max-height: 90vh;
   position: fixed;
   margin-left: 40px;
+  width: 360px;
 
   .cart__header {
     color: #fff;
@@ -16,6 +17,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0 4px 10px 0 #6b6b6b50;
+
+    p {
+      margin-left: 10px;
+      background-color: #fff;
+      border-radius: 30px;
+      font-weight: bold;
+      color: #000;
+      padding: 5px;
+    }
   }
 
   .cart__body {
@@ -74,7 +85,9 @@
   }
 
   .cart__footer {
-    // border: 1px dashed red;
+    z-index: 1;
+    box-shadow: 0 -5px 10px 0 #6b6b6b50;
+
     border-radius: 0 0 30px 30px;
     background-color: cadetblue;
     color: #fff;

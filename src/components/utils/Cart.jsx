@@ -53,6 +53,7 @@ export default function Cart() {
     <div className="cart">
       <div className="cart__header">
         <h2>Cart</h2>
+        {cart.length ? <p>{totalQuantity}</p> : null}
       </div>
       <div className="cart__body">
         {cart.length > 0 ? (
