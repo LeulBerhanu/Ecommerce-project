@@ -88,7 +88,7 @@ export default function Home() {
       {/* <aside>
       </aside> */}
       <div className="layout">
-        <div>
+        <div className="side-bar">
           <Cart />
         </div>
         <main>

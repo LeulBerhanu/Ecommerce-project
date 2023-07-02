@@ -2,6 +2,22 @@
   width: 100%;
   background-color: cadetblue;
   position: fixed;
+  padding: 5px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .links {
+    display: flex;
+    gap: 20px;
+  }
+
+  .link {
+    color: #000;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
 }
 
 .layout {
@@ -15,19 +31,12 @@
     justify-content: center;
     width: 100%;
 
-    // flex-direction: column;
-    // flex-direction: row;
-    // align-items: center;
-    // width: 800px;
-
     .cards {
       display: flex;
       gap: 40px;
       justify-content: center;
       width: 800px;
       flex-wrap: wrap;
-      //   margin-top: 70px;
-      //   border: 1px dashed red;
     }
   }
 
