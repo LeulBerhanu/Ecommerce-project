@@ -1,16 +1,21 @@
+.side-bar {
+  .cart {
+    position: fixed;
+  }
+}
 .cart {
   border-radius: 30px;
   box-shadow: 0 0 10px 0px #ccc;
   display: flex;
   flex-direction: column;
   max-height: 90vh;
-  position: fixed;
   margin-left: 40px;
   width: 360px;
   background: #fff;
 
   .no__item {
     padding: 20px;
+    overflow: hidden;
   }
 
   .cart__header {
@@ -36,7 +41,8 @@
 
   .cart__body {
     flex: 1 1 auto;
-    overflow-y: hidden;
+    overflow: hidden;
+    // padding: 10px;
 
     img {
       border-radius: 10px 0 0 0;
@@ -44,15 +50,24 @@
     }
 
     .cartItem__name {
+      transition: 0.2s;
       margin-left: 10px;
     }
 
     .cartItem {
+      box-shadow: 0 0 10px 2px #ccc;
       position: relative;
       border-radius: 10px;
-      border: 1px solid black;
+      // border: 1px solid black;
       margin: 20px;
-      width: 300px;
+      width: 325px;
+
+      button {
+        background: none;
+        border: none;
+        font-size: large;
+        // color: #fff;
+      }
 
       .cartItem__delete {
         opacity: 0;
@@ -61,6 +76,7 @@
         right: 5px;
         cursor: pointer;
         transition: 0.3s;
+        color: #000;
       }
 
       .cartItem__body {
@@ -69,13 +85,48 @@
       }
 
       .cartItem__footer {
+        transition: 0.3s;
         border-radius: 0 0 10px 10px;
         background: cadetblue;
         display: flex;
         justify-content: space-between;
-        padding: 0 10px;
+        padding: 0 20px;
 
         .cartItem__counter {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+
+          button {
+            font-size: 2rem;
+            cursor: pointer;
+            transition: 0.2s;
+            // margin: 0 10px;
+          }
+
+          button:hover {
+            transform: scale(1.5);
+          }
+        }
+      }
+    }
+
+    .cartItem:hover {
+      .cartItem__name {
+        // font-size: 1.8rem;
+        font-weight: bold;
+      }
+      .cartItem__footer {
+        background-color: rgb(18, 21, 21);
+        padding: 10px 20px;
+        font-weight: bold;
+        color: #fff;
+        font-size: larger;
+      }
+
+      .cartItem__counter {
+        button {
+          color: #fff;
         }
       }
     }
@@ -104,5 +155,20 @@
     justify-content: space-between;
     font-size: 2.4rem;
     font-weight: 600;
+  }
+
+  ::-webkit-scrollbar {
+    width: 2px;
+
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: #fff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
   }
 }

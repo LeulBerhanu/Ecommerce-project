@@ -1,4 +1,5 @@
 html {
   font-family: "Poppins";
   font-size: 62.5%;
+  scroll-behavior: smooth;
 }

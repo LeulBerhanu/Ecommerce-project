@@ -1,0 +1,32 @@
+.cartPage {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding-top: 50px;
+
+  .cart {
+    margin: 0;
+    width: 960px;
+
+    img {
+      width: 100px;
+    }
+
+    .cart__body {
+      font-size: 2rem;
+      width: 100%;
+      //   border: 1px dashed red;
+      //   overflow: hidden;
+    }
+
+    .cartItem {
+      box-shadow: 0 0 10px 2px #ccc;
+      border: none;
+      width: 920px;
+
+      //   margin: 0 auto;
+    }
+  }
+}

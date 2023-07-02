@@ -33,6 +33,7 @@ export default function Cart() {
       return prevCart.map((item, i) => {
         if (i === index && item.quantity > 1) {
           return {
+            key: uuidv4(),
             ...item,
             quantity: item.quantity - 1,
           };
@@ -59,7 +60,7 @@ export default function Cart() {
         {cart.length > 0 ? (
           cart.map((item, index) => {
             return (
-              <div className="cartItem" key={uuidv4}>
+              <div className="cartItem" key={item.id}>
                 <div className="cartItem__body">
                   <img src={item.image[0]} alt={item.name} />
                   <p className="cartItem__name">{item.name}</p>

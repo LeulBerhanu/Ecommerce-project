@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import "./sass/styles.scss";
 import Home from "./pages/Home.jsx";
 import Layout from "./components/Layout.jsx";
-import Cart from "./components/utils/Cart";
+// import Cart from "./components/utils/Cart";
+import CartPage from "./pages/CartPage";
 
 export const CartContext = createContext();
 
@@ -16,7 +17,7 @@ function App() {
         <Route path="/" element={<Layout />}>
           {/* <Route index element={<Card />} /> */}
           <Route index element={<Home />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="cart" element={<CartPage />} />
         </Route>
       </Routes>
     </CartContext.Provider>

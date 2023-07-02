@@ -100,7 +100,7 @@ export default function Home() {
                   addToCart={() => addToCart(item)}
                   {...item}
                   index={index}
-                  key={uuidv4()}
+                  key={item.id}
                 />
               );
             })}
