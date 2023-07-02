@@ -1,0 +1,19 @@
+.navBar {
+  width: 100%;
+  background-color: cadetblue;
+  position: fixed;
+}
+
+.layout {
+  display: flex;
+  padding: 70px;
+}
+
+// HOME PAGE
+.cards {
+  display: flex;
+  gap: 40px;
+  margin-left: 450px;
+  width: 800px;
+  flex-wrap: wrap;
+}
