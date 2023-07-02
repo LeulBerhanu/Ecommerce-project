@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Card from "./Card";
 import { CartContext } from "../../App";
 
@@ -37,16 +37,19 @@ function Cards({ filteredProducts }) {
     }
   }
 
+  function handleSelection(name) {}
+
   return (
     <div className="cards">
       {filteredProducts.map((item, index) => {
         return (
           <Card
+            key={item.id}
             className="cards__item"
+            onClick={() => handleSelection(item.name)}
             addToCart={() => addToCart(item)}
             {...item}
             index={index}
-            key={item.id}
           />
         );
       })}
