@@ -5,6 +5,8 @@ import Card from "../components/utils/Card";
 import Cart from "../components/utils/Cart";
 import { CartContext } from "../App";
 
+import "../components/componentsStyles.scss";
+
 export default function Home() {
   const [cart, setCart] = useContext(CartContext);
 
@@ -82,36 +84,39 @@ export default function Home() {
   }
 
   return (
-    <body>
-      <aside>
+    <>
+      {/* <aside>
+      </aside> */}
+      <div className="layout">
         <Cart />
-      </aside>
-      <main>
-        <div className="cards">
-          {filteredProducts.map((item, index) => {
-            return (
-              <Card
-                addToCart={() => addToCart(item)}
-                {...item}
-                index={index}
-                key={uuidv4()}
-              />
-            );
-          })}
+        <main>
+          <div className="cards">
+            {filteredProducts.map((item, index) => {
+              return (
+                <Card
+                  className="cards__item"
+                  addToCart={() => addToCart(item)}
+                  {...item}
+                  index={index}
+                  key={uuidv4()}
+                />
+              );
+            })}
+          </div>
+        </main>
+        <div className="size__filter">
+          <p>Filter size</p>
+          {filters.map((size, index) => (
+            <button
+              key={`filter-${index}`}
+              className={`${selectedFilters?.includes(size) ? "selected" : ""}`}
+              onClick={() => handleFilterButtonClick(size)}
+            >
+              {size}
+            </button>
+          ))}
         </div>
-      </main>
-      <div className="size__filter">
-        <p>Filter size</p>
-        {filters.map((size, index) => (
-          <button
-            key={`filter-${index}`}
-            className={`${selectedFilters?.includes(size) ? "selected" : ""}`}
-            onClick={() => handleFilterButtonClick(size)}
-          >
-            {size}
-          </button>
-        ))}
       </div>
-    </body>
+    </>
   );
 }

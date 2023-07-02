@@ -96,7 +96,7 @@ export default function Cart() {
             );
           })
         ) : (
-          <h2>No item</h2>
+          <h2 className="no__item">No item</h2>
         )}
         <div className="cart__item"></div>
       </div>
