@@ -10,6 +10,9 @@ export default function Header() {
           <NavLink className="link" to="/">
             Home
           </NavLink>
+          <NavLink className="link" to="/products">
+            Products
+          </NavLink>
           <NavLink className="link" to="/cart">
             cart
           </NavLink>
