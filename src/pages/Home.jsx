@@ -1,21 +1,17 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { data } from "../../data";
 import { v4 as uuidv4 } from "uuid";
 import Card from "../components/utils/Card";
 import Cart from "../components/utils/Cart";
+import { CartContext } from "../App";
 
 export default function Home() {
+  const [cart, setCart] = useContext(CartContext);
+
   const [filteredProducts, setFilteredProducts] = useState(data);
   const [selectedFilters, setSelectedFilter] = useState([]);
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
   const [show, setShow] = useState(true);
-
-  const totalQuantity = cart.reduce((acc, item) => (acc += item.quantity), 0);
-  const totalPrice = parseFloat(
-    cart
-      .reduce((acc, item) => (acc += item.price * item.quantity), 0)
-      .toFixed(2)
-  );
 
   const filters = ["xs", "s", "m", "l", "xl", "xxl"];
 
@@ -53,42 +49,6 @@ export default function Home() {
     setShow(!show);
   }
 
-  function increaseQuantity(index) {
-    setCart((prevCart) => {
-      return prevCart.map((item, i) => {
-        if (i === index) {
-          return {
-            ...item,
-            quantity: item.quantity + 1,
-          };
-        } else {
-          return item;
-        }
-      });
-    });
-  }
-
-  function decreaseQuantity(index) {
-    setCart((prevCart) => {
-      return prevCart.map((item, i) => {
-        if (i === index && item.quantity > 1) {
-          return {
-            ...item,
-            quantity: item.quantity - 1,
-          };
-        } else {
-          return item;
-        }
-      });
-    });
-  }
-
-  function handleRemoveItem(index) {
-    setCart((prevCart) => {
-      return prevCart.filter((item, i) => (i !== index ? item : null));
-    });
-  }
-
   function addToCart(cardsItem) {
     const itemIndex = cart.findIndex(
       (cartItem) => cartItem.id === cardsItem.id
@@ -124,62 +84,7 @@ export default function Home() {
   return (
     <body>
       <aside>
-        <div className="cart__bar">
-          <div className="cart__bar--header">
-            <p>Cart</p>
-          </div>
-          <div className="cart__bar--body">
-            {cart.length > 0 ? (
-              cart.map((item, index) => {
-                return (
-                  <div className="cart" key={Math.random()}>
-                    <div className="cart__image__container">
-                      <img src={item.image[0]} alt="" />
-                    </div>
-                    <div className="cart__details">
-                      <div className="cart__item__name">{item.name}</div>
-                      <div className="cart__item__size">{item.size.xl}</div>
-                      <div className="cart__item__quantity">
-                        Quantity: {item.quantity}
-                      </div>
-                    </div>
-                    <div className="cart__nav">
-                      <button
-                        className="cart__item__delete"
-                        onClick={() => handleRemoveItem(index)}
-                      >
-                        X
-                      </button>
-                      <div className="cart__item__price">
-                        ${Math.floor(item.price * item.quantity * 100) / 100}
-                      </div>
-                      <div className="cart__item__counter">
-                        <button
-                          className="cart__increaseQty"
-                          onClick={() => increaseQuantity(index)}
-                        >
-                          +
-                        </button>
-                        <button
-                          className="cart__decreaseQty"
-                          onClick={() => decreaseQuantity(index)}
-                        >
-                          -
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                );
-              })
-            ) : (
-              <h2>No item</h2>
-            )}
-          </div>
-          <div className="cart__bar--footer">
-            <p>Subtotal</p>
-            <p className="total__price">$ {totalPrice}</p>
-          </div>
-        </div>
+        <Cart />
       </aside>
       <main>
         <div className="cards">
