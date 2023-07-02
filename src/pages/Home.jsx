@@ -88,7 +88,9 @@ export default function Home() {
       {/* <aside>
       </aside> */}
       <div className="layout">
-        <Cart />
+        <div>
+          <Cart />
+        </div>
         <main>
           <div className="cards">
             {filteredProducts.map((item, index) => {
@@ -104,17 +106,21 @@ export default function Home() {
             })}
           </div>
         </main>
-        <div className="size__filter">
-          <p>Filter size</p>
-          {filters.map((size, index) => (
-            <button
-              key={`filter-${index}`}
-              className={`${selectedFilters?.includes(size) ? "selected" : ""}`}
-              onClick={() => handleFilterButtonClick(size)}
-            >
-              {size}
-            </button>
-          ))}
+        <div>
+          <div className="size__filter">
+            <p>Filter size</p>
+            {filters.map((size, index) => (
+              <button
+                key={`filter-${index}`}
+                className={`${
+                  selectedFilters?.includes(size) ? "selected" : ""
+                }`}
+                onClick={() => handleFilterButtonClick(size)}
+              >
+                {size}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
     </>
