@@ -2,6 +2,8 @@ import { useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
 import { CartContext } from "../App";
 import { data } from "../../data";
+
+import addToCart from "../components/utils/addToCart";
 import { v4 as uuidv4 } from "uuid";
 import "./pagesStyle.scss";
 
@@ -15,6 +17,10 @@ export default function ProductDetails() {
 
   function handleHover(selectedImage) {
     setSelectedImage(selectedImage);
+  }
+
+  function handleAddToCart() {
+    addToCart(product, cart, setCart);
   }
 
   return (
@@ -47,7 +53,9 @@ export default function ProductDetails() {
           </div>
         </div>
         <div id="rightColumn">
-          <button className="addToCart">Add to cart</button>
+          <button onClick={() => handleAddToCart()} className="addToCart">
+            Add to cart
+          </button>
         </div>
       </div>
     </div>
