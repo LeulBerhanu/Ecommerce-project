@@ -2,16 +2,18 @@ import { useContext, useState } from "react";
 import "./cartStyle.scss";
 import { v4 as uuidv4 } from "uuid";
 import { CartContext } from "../../App";
+import { totalPrice, totalQuantity } from "./cartFunctions";
 
 export default function Cart() {
   const [cart, setCart] = useContext(CartContext);
 
-  const totalQuantity = cart.reduce((acc, item) => (acc += item.quantity), 0);
-  const totalPrice = parseFloat(
-    cart
-      .reduce((acc, item) => (acc += item.price * item.quantity), 0)
-      .toFixed(2)
-  );
+  function calculateTotalPrice() {
+    return totalPrice(cart);
+  }
+
+  function calculateTotalQuantity() {
+    return totalQuantity(cart);
+  }
 
   function increaseQuantity(index) {
     setCart((prevCart) => {
@@ -54,7 +56,7 @@ export default function Cart() {
     <div className="cart">
       <div className="cart__header">
         <h2>Cart</h2>
-        {cart.length ? <p>{totalQuantity}</p> : null}
+        {cart.length ? <p>{calculateTotalQuantity()}</p> : null}
       </div>
       <div className="cart__body">
         {cart.length > 0 ? (
@@ -103,7 +105,7 @@ export default function Cart() {
       </div>
       <div className="cart__footer">
         <p>sub total</p>
-        <p>$ {totalPrice}</p>
+        <p>$ {calculateTotalPrice()}</p>
       </div>
     </div>
   );

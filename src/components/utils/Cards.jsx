@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import Card from "./Card";
 import { CartContext } from "../../App";
-import addToCart from "./addToCart";
+import { addToCart } from "./cartFunctions";
 
 function Cards({ filteredProducts }) {
   const [cart, setCart] = useContext(CartContext);

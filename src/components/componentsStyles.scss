@@ -68,4 +68,16 @@
   }
 }
 
-// HOME PAGE
+.cart__link {
+  position: relative;
+}
+
+.counterOnLink {
+  background-color: #fff;
+  border-radius: 100px;
+  font-size: 1.2rem;
+  position: absolute;
+  right: -15px;
+  top: -4px;
+  padding: 1px 2px;
+}
