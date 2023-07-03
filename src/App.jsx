@@ -8,6 +8,7 @@ import CartPage from "./pages/CartPage";
 import ProtectedRoutes from "./pages/ProtectedRoutes";
 import NotFound from "./pages/NotFound";
 import Products from "./pages/Products.jsx";
+import ProductDetails from "./pages/ProductDetails";
 
 export const CartContext = createContext();
 
@@ -21,6 +22,7 @@ function App() {
           {/* <Route index element={<Card />} /> */}
           <Route index element={<Home />} />
           <Route path="products" element={<Products />} />
+          <Route path="products/:productId" element={<ProductDetails />} />
           <Route element={<ProtectedRoutes />}>
             <Route path="cart" element={<CartPage />} />
           </Route>

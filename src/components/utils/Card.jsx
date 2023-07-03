@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 import "./cardStyle.scss";
 
 export default function Card(props) {
@@ -18,7 +19,9 @@ export default function Card(props) {
       <div className="card">
         <img src={props.image[0]} alt={props.name} />
         <div className="card__detail">
-          <h3 className="card__title">{props.name}</h3>
+          <Link to={`/products/${props.name}`}>
+            <h3 className="card__title">{props.name}</h3>
+          </Link>
           <p>$ {props.price}</p>
         </div>
 

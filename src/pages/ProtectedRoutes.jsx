@@ -2,7 +2,7 @@ import { Navigate, Outlet } from "react-router-dom";
 import LoginPage from "./LoginPage";
 
 export const useAuth = () => {
-  const user = { loggedIn: false };
+  const user = { loggedIn: true };
   return user && user.loggedIn;
 };
 

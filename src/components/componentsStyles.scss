@@ -1,3 +1,8 @@
+.header-component {
+  padding-bottom: 100px;
+  // border: 1px dashed red;
+}
+
 .navBar {
   width: 100%;
   background-color: cadetblue;
@@ -6,6 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  // height: 100px;
 
   .links {
     display: flex;
@@ -24,7 +30,8 @@
   display: grid;
   grid-template-columns: 300px 900px 1fr;
   gap: 40px;
-  padding: 70px 10px;
+  padding: 0 10px 50px 10px;
+  // padding-bottom: 100px;
 
   main {
     display: flex;

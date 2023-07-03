@@ -2,8 +2,8 @@
   color: #fff;
   border-radius: 30px;
   width: 200px;
-  //   border: 1px solid #000;
   background-color: cadetblue;
+  transition: 0.2s;
 
   img {
     border-radius: inherit;
@@ -67,4 +67,9 @@
     border-top: 1px solid #fff;
     background-color: cadetblue;
   }
+}
+
+.card:hover {
+  box-shadow: 0 0 10px 10px #ccc;
+  cursor: pointer;
 }

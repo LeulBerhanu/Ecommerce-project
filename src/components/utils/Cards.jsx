@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import Card from "./Card";
 import { CartContext } from "../../App";
+import { Link } from "react-router-dom";
 
 function Cards({ filteredProducts }) {
   const [cart, setCart] = useContext(CartContext);
@@ -37,8 +38,6 @@ function Cards({ filteredProducts }) {
     }
   }
 
-  function handleSelection(name) {}
-
   return (
     <div className="cards">
       {filteredProducts.map((item, index) => {
@@ -46,7 +45,6 @@ function Cards({ filteredProducts }) {
           <Card
             key={item.id}
             className="cards__item"
-            onClick={() => handleSelection(item.name)}
             addToCart={() => addToCart(item)}
             {...item}
             index={index}
