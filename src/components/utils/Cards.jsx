@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import Card from "./Card";
 import { CartContext } from "../../App";
-import { Link } from "react-router-dom";
 import addToCart from "./addToCart";
 
 function Cards({ filteredProducts }) {
