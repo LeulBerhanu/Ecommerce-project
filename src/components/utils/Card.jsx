@@ -19,7 +19,7 @@ export default function Card(props) {
       <div className="card">
         <img src={props.image[0]} alt={props.name} />
         <div className="card__detail">
-          <Link to={`/products/${props.name}`}>
+          <Link to={`/products/${props.id}`}>
             <h3 className="card__title">{props.name}</h3>
           </Link>
           <p>$ {props.price}</p>

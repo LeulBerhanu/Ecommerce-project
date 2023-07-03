@@ -2,40 +2,13 @@ import { useContext } from "react";
 import Card from "./Card";
 import { CartContext } from "../../App";
 import { Link } from "react-router-dom";
+import addToCart from "./addToCart";
 
 function Cards({ filteredProducts }) {
   const [cart, setCart] = useContext(CartContext);
 
-  function addToCart(cardsItem) {
-    const itemIndex = cart.findIndex(
-      (cartItem) => cartItem.id === cardsItem.id
-    );
-
-    if (itemIndex !== -1) {
-      setCart((prevCart) => {
-        return prevCart.map((item, i) => {
-          if (i === itemIndex) {
-            return {
-              ...item,
-              quantity: item.quantity + 1,
-            };
-          } else {
-            return item;
-          }
-        });
-      });
-    } else {
-      setCart((prevCart) => {
-        return [
-          ...prevCart,
-          {
-            ...cardsItem,
-            quantity: 1,
-            addedToCart: true,
-          },
-        ];
-      });
-    }
+  function handleAddToCart(cardItem) {
+    addToCart(cardItem, cart, setCart);
   }
 
   return (
@@ -45,7 +18,7 @@ function Cards({ filteredProducts }) {
           <Card
             key={item.id}
             className="cards__item"
-            addToCart={() => addToCart(item)}
+            addToCart={() => handleAddToCart(item)}
             {...item}
             index={index}
           />

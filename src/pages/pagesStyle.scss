@@ -1,3 +1,5 @@
+// CART PAGE
+
 .cartPage {
   display: flex;
   width: 100%;
@@ -31,9 +33,88 @@
   }
 }
 
+// LOGIN PAGE
+
 .login-page {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+// PRODUCT DETAIL PAGE
+.product__detail__page {
+  padding: 0 50px;
+  height: 200vh;
+
+  .product__detail__layout {
+    display: flex;
+    gap: 20px;
+
+    #leftColumn {
+      // border: 1px dashed blue;
+      display: flex;
+
+      .selected__image {
+        width: 400px;
+      }
+
+      .product__detail__imageBar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 75px;
+        margin-right: 10px;
+
+        img {
+          width: 100%;
+          border-radius: 10px;
+        }
+
+        img:hover {
+          outline: 2px solid #000;
+        }
+      }
+    }
+
+    #centerColumn {
+      // border: 1px dashed red;
+      width: 700px;
+
+      .product__detail__box {
+        display: flex;
+        gap: 25px;
+
+        img {
+          width: 400px;
+        }
+
+        .product__details {
+          hr {
+            margin: 10px 40px;
+            outline: 1px solid gold;
+          }
+
+          span {
+            font-weight: bold;
+            font-size: 3rem;
+          }
+        }
+      }
+    }
+
+    #rightColumn {
+      .addToCart {
+        width: 200px;
+        font-size: 2rem;
+        padding: 10px 0;
+        background-color: cadetblue;
+        border-radius: 10px;
+      }
+
+      .addToCart:hover {
+        background-color: rgb(42, 100, 103);
+      }
+    }
+  }
 }

@@ -8,7 +8,9 @@ export const data = [
   {
     id: uuidv4(),
     name: `Cropped Stay Groovy off white`,
-    image: [fullFrontImage, fullImage],
+    image: [fullFrontImage, fullImage, tshirt],
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque autem fugit, ullam soluta laudantium ipsa! Nesciunt, esse repudiandae quasi eum deleniti veritatis. Numquam reprehenderit quas accusantium? Ducimus, doloribus non. Fugiat, omnis sunt ab inventore temporibus eaque error impedit laudantium non, fuga delectus distinctio, earum nulla eveniet fugit reiciendis deleniti velit?",
     price: 10.9,
     wholesaleQty: 9,
     wholesalePrice: 1.21,
@@ -19,7 +21,9 @@ export const data = [
   {
     id: uuidv4(),
     name: `Basic Cactus White T-shirt`,
-    image: [tshirt, fullImage],
+    image: [tshirt, fullImage, fullFrontImage],
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque autem fugit, ullam soluta laudantium ipsa! Nesciunt, esse repudiandae quasi eum deleniti veritatis. Numquam reprehenderit quas accusantium? Ducimus, doloribus non. Fugiat, omnis sunt ab inventore temporibus eaque error impedit laudantium non, fuga delectus distinctio, earum nulla eveniet fugit reiciendis deleniti velit?",
     price: 13.25,
     wholesaleQty: 3,
     wholesalePrice: 4.42,
@@ -30,7 +34,9 @@ export const data = [
   {
     id: uuidv4(),
     name: `Skater Black Sweatshirt`,
-    image: [tshirt, fullImage],
+    image: [tshirt, fullImage, fullFrontImage],
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque autem fugit, ullam soluta laudantium ipsa! Nesciunt, esse repudiandae quasi eum deleniti veritatis. Numquam reprehenderit quas accusantium? Ducimus, doloribus non. Fugiat, omnis sunt ab inventore temporibus eaque error impedit laudantium non, fuga delectus distinctio, earum nulla eveniet fugit reiciendis deleniti velit?",
     price: 25.9,
     wholesaleQty: 12,
     wholesalePrice: 2.16,
@@ -41,7 +47,9 @@ export const data = [
   {
     id: uuidv4(),
     name: `Skater Black Sweatshirt`,
-    image: [tshirt, fullImage],
+    image: [tshirt, fullImage, fullFrontImage],
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque autem fugit, ullam soluta laudantium ipsa! Nesciunt, esse repudiandae quasi eum deleniti veritatis. Numquam reprehenderit quas accusantium? Ducimus, doloribus non. Fugiat, omnis sunt ab inventore temporibus eaque error impedit laudantium non, fuga delectus distinctio, earum nulla eveniet fugit reiciendis deleniti velit?",
     price: 25.9,
     wholesaleQty: 12,
     wholesalePrice: 2.16,
@@ -52,7 +60,9 @@ export const data = [
   {
     id: uuidv4(),
     name: `Skater Black Sweatshirt`,
-    image: [tshirt, fullImage],
+    image: [tshirt, fullImage, fullFrontImage],
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque autem fugit, ullam soluta laudantium ipsa! Nesciunt, esse repudiandae quasi eum deleniti veritatis. Numquam reprehenderit quas accusantium? Ducimus, doloribus non. Fugiat, omnis sunt ab inventore temporibus eaque error impedit laudantium non, fuga delectus distinctio, earum nulla eveniet fugit reiciendis deleniti velit?",
     price: 25.9,
     wholesaleQty: 12,
     wholesalePrice: 2.16,
@@ -63,7 +73,9 @@ export const data = [
   {
     id: uuidv4(),
     name: `Skater Black Sweatshirt`,
-    image: [tshirt, fullImage],
+    image: [tshirt, fullImage, fullFrontImage],
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque autem fugit, ullam soluta laudantium ipsa! Nesciunt, esse repudiandae quasi eum deleniti veritatis. Numquam reprehenderit quas accusantium? Ducimus, doloribus non. Fugiat, omnis sunt ab inventore temporibus eaque error impedit laudantium non, fuga delectus distinctio, earum nulla eveniet fugit reiciendis deleniti velit?",
     price: 25.9,
     wholesaleQty: 12,
     wholesalePrice: 2.16,
@@ -74,7 +86,9 @@ export const data = [
   {
     id: uuidv4(),
     name: `Skater Black Sweatshirt`,
-    image: [tshirt, fullImage],
+    image: [tshirt, fullImage, fullFrontImage],
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque autem fugit, ullam soluta laudantium ipsa! Nesciunt, esse repudiandae quasi eum deleniti veritatis. Numquam reprehenderit quas accusantium? Ducimus, doloribus non. Fugiat, omnis sunt ab inventore temporibus eaque error impedit laudantium non, fuga delectus distinctio, earum nulla eveniet fugit reiciendis deleniti velit?",
     price: 25.9,
     wholesaleQty: 12,
     wholesalePrice: 2.16,
@@ -85,7 +99,9 @@ export const data = [
   {
     id: uuidv4(),
     name: `Skater Black Sweatshirt`,
-    image: [tshirt, fullImage],
+    image: [tshirt, fullImage, fullFrontImage],
+    details:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque autem fugit, ullam soluta laudantium ipsa! Nesciunt, esse repudiandae quasi eum deleniti veritatis. Numquam reprehenderit quas accusantium? Ducimus, doloribus non. Fugiat, omnis sunt ab inventore temporibus eaque error impedit laudantium non, fuga delectus distinctio, earum nulla eveniet fugit reiciendis deleniti velit?",
     price: 25.9,
     wholesaleQty: 12,
     wholesalePrice: 2.16,
