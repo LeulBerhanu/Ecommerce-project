@@ -1,2 +1,2 @@
 # Ecommerce-project
-This is a simple ecommerce project that I'm working on intending to mainly enhance my React, React-router and JS skill.  
+This is a simple ecommerce project that I'm working with the intention of mainly enhancing my skills in React, React-router, and JavaScript.  
